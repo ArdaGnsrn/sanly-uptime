@@ -10,7 +10,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
-class CheckMonitorJob implements ShouldQueue, ShouldBeUnique
+class CheckMonitorJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
@@ -42,10 +42,5 @@ class CheckMonitorJob implements ShouldQueue, ShouldBeUnique
             'status_code' => $statusCode,
             'is_accessible' => $isAccessible,
         ]);
-    }
-
-    public function uniqueId()
-    {
-        return $this->monitor->id;
     }
 }

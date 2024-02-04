@@ -36,9 +36,10 @@ class CheckMonitorsCommand extends Command
                 $query->where('created_at', '>=', DB::raw('DATE_SUB(NOW(), INTERVAL monitors.interval MINUTE)'));
             })
             ->get();
-        
-        $this->withProgressBar($monitors, function ($monitor) {
+
+        $this->info('Dispatching jobs... Count: ' . $monitors->count());
+        foreach ($monitors as $monitor) {
             CheckMonitorJob::dispatch($monitor);
-        });
+        }
     }
 }
