@@ -22,4 +22,17 @@ class AuthController extends Controller
                 'email' => 'Kardeş yanlış girdin.',
             ]);
     }
+
+    public function logout(Request $request)
+    {
+        auth()->logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/');
+    }
+
+
 }

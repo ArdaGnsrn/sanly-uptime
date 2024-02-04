@@ -80,6 +80,32 @@
                 <!-- CONTENT AREA -->
                 <div class="row layout-top-spacing">
                     <div class="col-12">
+                        @php($isDebug = (app()->environment('local') && isset($_GET['debug'])))
+                        @if (session('error') || $isDebug)
+                            <div class="alert alert-danger">
+                                <strong>Hata:</strong><br/>
+                                {{ session('error') ?? "Bir hata meydana geldi!" }}
+                            </div>
+                        @endif
+                        @if(session('success') || $isDebug)
+                            <div class="alert alert-success">
+                                <strong>Başarılı:</strong><br/>
+                                {{ session('success') ?? "İşlem başarıyla gerçekleştirildi." }}
+                            </div>
+                        @endif
+                        @if ($errors && $errors->any())
+                            <div class="alert alert-danger">
+                                <strong>Hata:</strong><br/>
+                                <ul style="margin-bottom: 0">
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                    </div>
+
+                    <div class="col-12">
                         {{$slot}}
                     </div>
                 </div>

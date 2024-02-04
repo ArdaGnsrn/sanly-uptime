@@ -39,6 +39,29 @@
             <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-8 col-12 d-flex flex-column align-self-center mx-auto">
                 <div class="card mt-3 mb-3">
                     <div class="card-body">
+                        @php($isDebug = (app()->environment('local') && isset($_GET['debug'])))
+                        @if (session('error') || $isDebug)
+                            <div class="alert alert-danger">
+                                <strong>Hata:</strong><br/>
+                                {{ session('error') ?? "Bir hata meydana geldi!" }}
+                            </div>
+                        @endif
+                        @if(session('success') || $isDebug)
+                            <div class="alert alert-success">
+                                <strong>Başarılı:</strong><br/>
+                                {{ session('success') ?? "İşlem başarıyla gerçekleştirildi." }}
+                            </div>
+                        @endif
+                        @if ($errors && $errors->any())
+                            <div class="alert alert-danger">
+                                <strong>Hata:</strong><br/>
+                                <ul style="margin-bottom: 0">
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                         <form action="{{route('login')}}" method="post">
                             @csrf
                             <div class="row">
