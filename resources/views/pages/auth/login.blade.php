@@ -79,7 +79,7 @@
                                 <div class="col-12">
                                     <div class="mb-4">
                                         <label class="form-label" for="password">Şifre</label>
-                                        <input type="text" name="password" id="password" class="form-control">
+                                        <input type="password" name="password" id="password" class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-12">
