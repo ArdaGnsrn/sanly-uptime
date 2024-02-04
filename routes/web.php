@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,4 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::middleware('auth:web')->group(function () {
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+});
+
+
+Route::view('/login', 'pages.auth.login')->name('login');
+Route::post('/login', [AuthController::class, 'login']);

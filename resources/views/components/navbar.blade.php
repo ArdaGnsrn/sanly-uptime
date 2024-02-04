@@ -49,8 +49,8 @@
                         <div class="media mx-auto">
                             <img src="{{asset('src/assets/img/profile-26.jpeg')}}" class="img-fluid me-2" alt="avatar">
                             <div class="media-body">
-                                <h5>Sagopa Kajmer</h5>
-                                <p>KafKefer</p>
+                                <h5>{{auth()->user()->full_name}}</h5>
+                                <p>{{auth()->user()->phone}}</p>
                             </div>
                         </div>
                     </div>
