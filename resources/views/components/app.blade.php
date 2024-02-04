@@ -23,6 +23,8 @@
     <link rel="stylesheet" type="text/css" href="{{asset('src/assets/css/dark/elements/alert.css')}}">
     <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
 
+    @vite('resources/js/app.js')
+
     @stack('css')
 
     <style>
@@ -137,11 +139,10 @@
 <script src="{{asset('src/plugins/src/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
 <script src="{{asset('layouts/modern-dark-menu/app.js')}}"></script>
 <script src="{{asset('src/plugins/src/waves/waves.min.js')}}"></script>
-
-
 <script src="{{asset('src/assets/js/custom.js')}}"></script>
 <!-- END GLOBAL MANDATORY SCRIPTS -->
 
+@vite('resources/js/app.js')
 @stack('js')
 </body>
 </html>
