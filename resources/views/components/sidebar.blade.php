@@ -1,16 +1,14 @@
 <div class="sidebar-wrapper sidebar-theme">
-
     <nav id="sidebar">
-
         <div class="navbar-nav theme-brand flex-row  text-center">
             <div class="nav-logo">
                 <div class="nav-item theme-logo">
-                    <a href="index.html">
-                        <img src="../../src/assets/img/logo.svg" class="navbar-logo" alt="logo">
+                    <a href="{{url('/')}}">
+                        <img src="{{asset('src/assets/img/logo.svg')}}" class="navbar-logo" alt="logo">
                     </a>
                 </div>
                 <div class="nav-item theme-text">
-                    <a href="{{url('/')}}" class="nav-link"> Uptime </a>
+                    <a href="{{url('/')}}" class="nav-link"> {{config('app.name')}} </a>
                 </div>
             </div>
             <div class="nav-item sidebar-toggle">
@@ -40,9 +38,6 @@
                     </div>
                 </a>
             </li>
-
         </ul>
-
     </nav>
-
 </div>
