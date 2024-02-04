@@ -23,6 +23,8 @@
     <link rel="stylesheet" type="text/css" href="{{asset('src/assets/css/dark/elements/alert.css')}}">
     <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
 
+    @stack('css')
+
     <style>
         body.dark .layout-px-spacing, .layout-px-spacing {
             min-height: calc(100vh - 155px) !important;
@@ -101,18 +103,19 @@
 </div>
 <!-- END MAIN CONTAINER -->
 
+@stack('content-after')
+
 <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
 <script src="{{asset('src/plugins/src/global/vendors.min.js')}}"></script>
 <script src="{{asset('src/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset('src/plugins/src/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
 <script src="{{asset('layouts/modern-dark-menu/app.js')}}"></script>
+<script src="{{asset('src/plugins/src/waves/waves.min.js')}}"></script>
 
 
 <script src="{{asset('src/assets/js/custom.js')}}"></script>
 <!-- END GLOBAL MANDATORY SCRIPTS -->
 
-<!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
-
-<!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
+@stack('js')
 </body>
 </html>
