@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
-    <title>{{$title ?? 'Uptime Bitch'}}</title>
+    <title>{{$title ?? config('app.name')}}</title>
     <link rel="icon" type="image/x-icon" href="{{asset('src/assets/img/favicon.ico')}}"/>
     <!-- ENABLE LOADERS -->
     <link href="{{asset('layouts/modern-dark-menu/css/light/loader.css')}}" rel="stylesheet" type="text/css"/>
@@ -89,7 +89,7 @@
 
         <div class="footer-wrapper">
             <div class="footer-section f-section-1">
-                <p class="">Copyright © <span class="dynamic-year">2024</span> Tüm hakları bizde.</p>
+                <p class="">Copyright © <span class="dynamic-year">2024</span> Tüm hakları saklıdır.</p>
             </div>
             <div class="footer-section f-section-2">
                 <p>
